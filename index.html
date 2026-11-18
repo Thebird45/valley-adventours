@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valley Adventours · San Cipriano desde Cali</title>
+<meta name="description" content="Excursión a la Reserva Natural San Cipriano desde Cali: río cristalino, selva del Pacífico y almuerzo incluido.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--jungle:#0d2418;--moss:#16382a;--lime:#c8f43a;--sun:#ffd23f;--white:#f6f8f2;--muted:#a9bcae}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--jungle);color:var(--white);line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.concept{background:#000;color:#cfd8cc;font-size:12px;text-align:center;padding:6px 12px;letter-spacing:.02em}
+header{position:absolute;top:28px;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:18px 5vw}
+.logo{font-family:Anton,Impact,sans-serif;font-size:26px;letter-spacing:.04em;text-transform:uppercase}
+.logo span{color:var(--lime)}
+nav a{font-weight:500;font-size:14px;text-decoration:none;margin-left:28px;opacity:.85}
+nav a:hover{opacity:1;color:var(--lime)}
+.hero{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:flex-end}
+.slides,.slides div{position:absolute;inset:0}
+.slides div{background-size:cover;background-position:center;opacity:0;animation:fade 18s infinite,zoom 18s infinite}
+.slides div:nth-child(2){animation-delay:6s}
+.slides div:nth-child(3){animation-delay:12s}
+@keyframes fade{0%{opacity:0}6%{opacity:1}33%{opacity:1}39%{opacity:0}100%{opacity:0}}
+@keyframes zoom{0%{transform:scale(1.15)}39%{transform:scale(1)}100%{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,36,24,.35) 0%,rgba(13,36,24,.15) 40%,rgba(13,36,24,.95) 100%)}
+.hero-in{position:relative;z-index:2;padding:0 5vw 9vh;width:100%}
+.tag{display:inline-block;background:var(--lime);color:var(--jungle);font-weight:700;font-size:13px;padding:6px 14px;text-transform:uppercase;letter-spacing:.08em;transform:skewX(-8deg)}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(64px,13vw,190px);line-height:.88;text-transform:uppercase;margin:18px 0 22px;letter-spacing:-.01em}
+h1 em{font-style:normal;color:var(--lime)}
+.hero p{max-width:520px;font-size:18px;color:#e3ebe0}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:28px;background:var(--lime);color:var(--jungle);font-weight:700;padding:16px 28px;text-decoration:none;text-transform:uppercase;letter-spacing:.06em;font-size:14px;clip-path:polygon(0 0,100% 0,94% 100%,0 100%);transition:transform .2s}
+.cta:hover{transform:translateX(4px)}
+.cta.ghost{background:transparent;color:var(--white);border:2px solid var(--white);clip-path:none;margin-left:12px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--lime);color:var(--jungle)}
+.stats div{padding:28px 5vw;border-right:2px solid var(--jungle)}
+.stats div:last-child{border:0}
+.stats b{font-family:Anton,sans-serif;font-weight:400;font-size:42px;display:block;line-height:1}
+.stats span{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+section{padding:110px 5vw}
+.label{color:var(--lime);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+h2{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(40px,6vw,80px);line-height:.95;text-transform:uppercase;margin:12px 0 24px}
+.intro{display:grid;grid-template-columns:1.1fr 1fr;gap:6vw;align-items:center}
+.intro p{color:var(--muted);font-size:17px;margin-bottom:16px}
+.intro .pic{position:relative}
+.intro .pic img{width:100%;height:560px;object-fit:cover;clip-path:polygon(8% 0,100% 0,100% 100%,0 100%)}
+.intro .pic::before{content:"";position:absolute;inset:24px -18px -18px 24px;border:3px solid var(--lime);z-index:-1}
+.day{background:var(--moss);position:relative}
+.day::before{content:"";position:absolute;top:-60px;left:0;right:0;height:61px;background:var(--moss);clip-path:polygon(0 100%,100% 0,100% 100%)}
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:50px;position:relative}
+.timeline::before{content:"";position:absolute;top:22px;left:0;right:0;height:3px;background:repeating-linear-gradient(90deg,var(--lime) 0 14px,transparent 14px 24px)}
+.step{padding-right:20px;position:relative}
+.step i{display:grid;place-items:center;width:46px;height:46px;background:var(--lime);color:var(--jungle);font-style:normal;font-family:Anton,sans-serif;font-size:20px;margin-bottom:22px;position:relative}
+.step h3{font-size:18px;margin-bottom:8px}
+.step p{font-size:14px;color:var(--muted)}
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:280px 280px;gap:14px}
+.gallery img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1);transition:transform .5s}
+.gallery figure{overflow:hidden}
+.gallery figure:hover img{transform:scale(1.06)}
+.gallery figure:first-child{grid-row:span 2}
+.video{position:relative;height:78vh;min-height:460px;overflow:hidden}
+.video video,.video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.video .over{position:absolute;inset:0;background:rgba(13,36,24,.45);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 5vw}
+.video h2{font-size:clamp(46px,8vw,120px)}
+.include{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.card{border:2px solid #2c5240;padding:34px 28px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--lime);transform:translateY(-4px)}
+.card svg{width:40px;height:40px;stroke:var(--lime);fill:none;stroke-width:2;margin-bottom:18px}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:15px}
+.faq{max-width:860px}
+details{border-bottom:2px solid #2c5240;padding:22px 0}
+summary{font-weight:700;font-size:18px;cursor:pointer;list-style:none;display:flex;justify-content:space-between}
+summary::after{content:"+";color:var(--lime);font-family:Anton,sans-serif;font-size:26px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:12px}
+.final{background:var(--lime);color:var(--jungle);text-align:center}
+.final h2{font-size:clamp(48px,9vw,130px)}
+.final .cta{background:var(--jungle);color:var(--lime)}
+footer{padding:40px 5vw;font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+footer a{color:var(--lime)}
+.wa{position:fixed;right:22px;bottom:22px;z-index:50;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.wa svg{width:32px;height:32px;fill:#fff}
+.reveal{opacity:0;transform:translateY(30px);transition:all .8s ease}
+.reveal.on{opacity:1;transform:none}
+@media(max-width:900px){
+ nav{display:none}
+ .stats{grid-template-columns:1fr 1fr}
+ .stats div{border-right:0;border-bottom:2px solid var(--jungle)}
+ .intro{grid-template-columns:1fr}
+ .intro .pic img{height:380px}
+ .timeline{grid-template-columns:1fr;gap:28px}
+ .timeline::before{top:0;bottom:0;left:22px;right:auto;width:3px;height:auto;background:repeating-linear-gradient(180deg,var(--lime) 0 14px,transparent 14px 24px)}
+ .step{display:grid;grid-template-columns:46px 1fr;column-gap:18px}
+ .step i{margin:0;grid-row:span 2}
+ .gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 160px 160px}
+ .gallery figure:first-child{grid-column:span 2;grid-row:auto}
+ .include{grid-template-columns:1fr}
+ section{padding:80px 6vw}
+ .cta.ghost{margin:12px 0 0}
+ .concept{font-size:10.5px}
+ header{top:34px}
+}
+</style>
+</head>
+<body>
+<div class="concept">Propuesta de diseño (concepto) · no es el sitio oficial de Valley Adventours</div>
+<header>
+ <div class="logo">Valley<span>.</span>Adventours</div>
+ <nav><a href="#experiencia">Experiencia</a><a href="#dia">El día</a><a href="#incluye">Incluye</a><a href="#faq">Preguntas</a></nav>
+</header>
+
+<section class="hero" style="padding:0">
+ <div class="slides">
+  <div style="background-image:url('https://images.unsplash.com/photo-1623227907069-5ffe948a50a9?fm=jpg&q=70&w=2000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D')"></div>
+  <div style="background-image:url('https://images.unsplash.com/photo-1753152566167-82312bb1f647?fm=jpg&q=70&w=2000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D')"></div>
+  <div style="background-image:url('https://images.unsplash.com/photo-1755983635662-041244403b0f?fm=jpg&q=70&w=2000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D')"></div>
+ </div>
+ <div class="hero-in">
+  <span class="tag">Excursión de un día desde Cali</span>
+  <h1>San <em>Cipriano</em><br>te espera</h1>
+  <p>Río de agua cristalina, selva del Pacífico y un día entero lejos del ruido de la ciudad. Salimos desde Cali, volvemos al final de la tarde.</p>
+  <a class="cta" href="https://wa.me/573007748605?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20la%20excursi%C3%B3n%20a%20San%20Cipriano" target="_blank" rel="noopener">Reservar por WhatsApp →</a>
+  <a class="cta ghost" href="#dia">Ver el día completo</a>
+ </div>
+</section>
+
+<div class="stats">
+ <div><b>1</b><span>Día completo</span></div>
+ <div><b>18:00</b><span>Regreso a Cali</span></div>
+ <div><b>100%</b><span>Selva y río</span></div>
+ <div><b>✓</b><span>Almuerzo incluido</span></div>
+</div>
+
+<section id="experiencia">
+ <div class="intro">
+  <div class="reveal">
+   <div class="label">La experiencia</div>
+   <h2>Un río tan claro<br>que se ve el fondo</h2>
+   <p>La Reserva Natural San Cipriano es uno de esos lugares que parecen de otro país: un río transparente rodeado de selva húmeda, a pocas horas de Cali.</p>
+   <p>Nosotros nos encargamos del transporte, la ruta y el almuerzo. Tú solo llevas vestido de baño, ganas de mojarte y la cámara.</p>
+   <a class="cta" href="https://wa.me/573007748605" target="_blank" rel="noopener">Pregunta por fechas</a>
+  </div>
+  <div class="pic reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1631134953337-b660eda6e87f?fm=jpg&q=70&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Cascada en medio de la selva"></div>
+ </div>
+</section>
+
+<section class="day" id="dia">
+ <div class="label">Así es el día</div>
+ <h2>De Cali a la selva<br>y de vuelta</h2>
+ <div class="timeline">
+  <div class="step reveal"><i>1</i><h3>Punto de encuentro</h3><p>Nos vemos en Cali a primera hora y salimos rumbo al Pacífico.</p></div>
+  <div class="step reveal"><i>2</i><h3>Llegada a la reserva</h3><p>Entramos a San Cipriano y empieza el recorrido por la selva.</p></div>
+  <div class="step reveal"><i>3</i><h3>Tiempo en el río</h3><p>Baño en las pozas de agua cristalina, con calma y sin afanes.</p></div>
+  <div class="step reveal"><i>4</i><h3>Almuerzo</h3><p>Almuerzo incluido y un rato para descansar en la reserva.</p></div>
+  <div class="step reveal"><i>5</i><h3>Regreso</h3><p>Volvemos al punto de encuentro en Cali, hacia las 18:00.</p></div>
+ </div>
+</section>
+
+<section>
+ <div class="label">Galería</div>
+ <h2>Lo que vas a ver</h2>
+ <div class="gallery">
+  <figure><img loading="lazy" src="https://images.unsplash.com/photo-1695091321673-f16c5b68c29d?fm=jpg&q=70&w=1400&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Quebrada en la selva"></figure>
+  <figure><img loading="lazy" src="https://images.unsplash.com/photo-1781869105170-b8343b37cd2e?fm=jpg&q=70&w=800&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Río tropical entre rocas"></figure>
+  <figure><img loading="lazy" src="https://images.unsplash.com/photo-1777325568847-c14ea1c8fb3a?fm=jpg&q=70&w=800&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Vegetación densa junto al agua"></figure>
+  <figure><img loading="lazy" src="https://images.unsplash.com/photo-1631134953489-4a22cee9a497?fm=jpg&q=70&w=800&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Puente de madera en la selva"></figure>
+  <figure><img loading="lazy" src="https://images.unsplash.com/photo-1631134953369-d5355292d73d?fm=jpg&q=70&w=800&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Selva verde"></figure>
+ </div>
+</section>
+
+<div class="video">
+ <video autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1623227907069-5ffe948a50a9?fm=jpg&q=70&w=1600&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D">
+  <source src="https://www.pexels.com/download/video/30777897/" type="video/mp4">
+ </video>
+ <div class="over"><div class="label">Escucha el río</div><h2>Desconéctate<br>un día entero</h2></div>
+</div>
+
+<section id="incluye">
+ <div class="label">Qué incluye</div>
+ <h2>Sin preocuparte<br>por nada</h2>
+ <div class="include">
+  <div class="card reveal"><svg viewBox="0 0 24 24"><path d="M3 17h18M5 17V9l7-5 7 5v8"/><circle cx="8" cy="19" r="1.5"/><circle cx="16" cy="19" r="1.5"/></svg><h3>Transporte</h3><p>Ida y vuelta desde el punto de encuentro en Cali.</p></div>
+  <div class="card reveal"><svg viewBox="0 0 24 24"><path d="M4 11h16a8 8 0 0 1-16 0zM8 7c0-2 2-2 2-4M12 7c0-2 2-2 2-4"/></svg><h3>Almuerzo</h3><p>Almuerzo incluido dentro de la reserva, con bebida.</p></div>
+  <div class="card reveal"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg><h3>Tiempo en la reserva</h3><p>Un rato para descansar en San Cipriano después de almorzar, antes del regreso.</p></div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="label">Preguntas</div>
+ <h2>Antes de ir</h2>
+ <div class="faq">
+  <details><summary>¿Qué debo llevar?</summary><p>Vestido de baño, toalla, ropa de cambio, repelente, bloqueador y zapatos que se puedan mojar.</p></details>
+  <details><summary>¿A qué hora volvemos?</summary><p>El regreso al punto de encuentro en Cali está previsto hacia las 18:00.</p></details>
+  <details><summary>¿Cómo reservo?</summary><p>Escríbenos por WhatsApp con la fecha y el número de personas y te confirmamos disponibilidad y precio.</p></details>
+ </div>
+</section>
+
+<section class="final">
+ <h2>¿Nos vamos<br>al río?</h2>
+ <a class="cta" href="https://wa.me/573007748605?text=Hola%2C%20quiero%20reservar%20San%20Cipriano" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+</section>
+
+<footer>
+ <span>Valley Adventours · Cali, Colombia · WhatsApp 300 774 8605</span>
+ <span>Fotos: Secret Travel Guide, WILLIAN REIS, Backroad Packers, Daniel Restrepo Londoño, Ronin, Anoeskha B en <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> · Video: <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></span>
+ <span>Concepto de diseño y desarrollo: Juan Benítez</span>
+</footer>
+
+<a class="wa" href="https://wa.me/573007748605" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4a10.4 10.4 0 0 1-1.7-5.7C5.1 9.9 10 5.1 16 5.1s10.9 4.8 10.9 10.7S22 26.4 16 26.4zm6-8c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.8 1.1 3.4.9 4 .8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.7-.4z"/></svg></a>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('video source').forEach(s=>s.addEventListener('error',()=>{const v=s.parentElement;const i=document.createElement('img');i.src=v.poster;i.alt='';v.replaceWith(i)}));
+</script>
+<script>
+(function(){
+ function bad(i){i.style.visibility='hidden';if(i.parentElement)i.parentElement.style.background='linear-gradient(135deg,rgba(120,130,120,.35),rgba(60,70,65,.35))'}
+ document.querySelectorAll('img').forEach(function(i){if(i.complete&&i.naturalWidth===0&&i.src)bad(i);else i.addEventListener('error',function(){bad(i)})});
+ document.querySelectorAll('[style*="background-image"]').forEach(function(d){var m=d.style.backgroundImage.match(/url\(["']?(.*?)["']?\)/);if(!m)return;var t=new Image();t.onerror=function(){d.remove()};t.src=m[1]});
+})();
+</script>
+</body>
+</html>
