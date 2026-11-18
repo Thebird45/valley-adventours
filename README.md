@@ -10,7 +10,7 @@ Aventura: tipografía condensada grande, cortes en diagonal, slider de fotos con
 ## Detalles técnicos
 - HTML, CSS y JavaScript puro: sin frameworks ni dependencias, un solo archivo.
 - Totalmente responsive (escritorio, tablet y celular).
-- Slider animado en CSS · línea de tiempo responsive · galería · preguntas frecuentes con <details> · botón flotante de WhatsApp.
+- Slider animado en CSS · línea de tiempo responsive · galería · preguntas frecuentes con `<details>` · botón flotante de WhatsApp.
 - Botón de reserva directo a WhatsApp.
 
 ## Verlo localmente
